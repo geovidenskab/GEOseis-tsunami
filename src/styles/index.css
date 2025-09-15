@@ -1,0 +1,667 @@
+/* GEO-tsunami - GeoSeis21 Styling */
+
+/* Reset og base styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #2C3E50;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main app layout - GeoSeis21 style */
+.geoseis-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header - Original GeoSeis21 gradient design */
+.header {
+    background: linear-gradient(135deg, #F8F9FA 0%, #E8F4FD 50%, #D6EBFD 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #E9ECEF;
+    position: relative;
+    z-index: 100;
+    padding: 0.75rem 2rem;
+    margin: -1rem -3rem 1.5rem -3rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.app-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2C3E50;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.app-subtitle {
+    font-size: 0.9rem;
+    color: #6C757D;
+    margin: 0;
+    font-weight: 400;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.version-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.version-text {
+    color: #6c757d;
+    font-size: 0.7rem;
+    font-weight: 400;
+    display: inline-block;
+    margin-top: 4px;
+    opacity: 0.7;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 0 2rem 2rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* GEO-tsunami specific styles */
+.tsunami-watch-container {
+    width: 100%;
+}
+
+.status-bar {
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    border-radius: 8px;
+}
+
+.status-item {
+    font-size: 14px;
+    color: #666;
+}
+
+.status-item strong {
+    color: #1976d2;
+}
+
+.phase-navigation {
+    display: flex;
+    gap: 8px;
+}
+
+.phase-btn {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.phase-btn:hover {
+    background-color: #1565c0;
+}
+
+.phase-btn.active {
+    background-color: #1976d2;
+}
+
+.phase-btn.secondary {
+    background-color: rgba(25, 118, 210, 0.1);
+    color: #1976d2;
+}
+
+.phase-btn.secondary:hover {
+    background-color: rgba(25, 118, 210, 0.2);
+}
+
+/* Cards and content */
+.info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #E9ECEF;
+    margin-bottom: 2rem;
+}
+
+.card-title {
+    margin: 0 0 1.5rem 0;
+    color: #1976d2;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid #e3f2fd;
+    padding-bottom: 0.75rem;
+}
+
+/* Grid layouts */
+.grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Form elements */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #E9ECEF;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: white;
+    font-family: inherit;
+}
+
+/* Remove arrows from number inputs */
+.form-input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.form-input[type="number"]::-webkit-outer-spin-button,
+.form-input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-input:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+    outline: none;
+}
+
+.form-input:hover {
+    border-color: #1976d2;
+}
+
+/* Buttons */
+.btn {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
+    font-family: inherit;
+}
+
+.btn:hover {
+    background-color: #1565c0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    box-shadow: 0 2px 4px rgba(108, 117, 125, 0.2);
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+.btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn.disabled:hover {
+    transform: none;
+    box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
+}
+
+/* Navigation buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+/* Info boxes */
+.info-box {
+    background-color: #e3f2fd;
+    border: 1px solid #bbdefb;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border: 1px solid #E9ECEF;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 0.85rem;
+}
+
+.data-table th {
+    background-color: #f8f9fa;
+    padding: 0.75rem 0.5rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #E9ECEF;
+    color: #2C3E50;
+    font-size: 0.8rem;
+}
+
+.data-table td {
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+}
+
+.data-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Radio options */
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: 1px solid transparent;
+}
+
+.radio-option:hover {
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+}
+
+.radio-option input[type="radio"] {
+    margin: 0;
+}
+
+.radio-option input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Decision box */
+.decision-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid;
+    text-align: center;
+    margin: 1.5rem 0;
+    background: white;
+}
+
+.decision-box h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.decision-box h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.decision-box p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.5rem 1rem;
+        margin: -1rem -1rem 1rem -1rem;
+    }
+
+    .main-content {
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .status-bar {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .phase-navigation {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .table-container {
+        font-size: 0.8rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 0.5rem 0.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 1.5rem;
+    }
+
+    .app-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .info-card {
+        padding: 1rem;
+    }
+
+    .phase-btn {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
+
+/* Collapsible sections */
+.collapsible {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.collapsible-header {
+    background-color: #f8f9fa;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s;
+}
+
+.collapsible-header:hover {
+    background-color: #e9ecef;
+}
+
+.collapsible-title {
+    font-weight: 600;
+    color: #2C3E50;
+    margin: 0;
+}
+
+.collapsible-icon {
+    font-size: 1.2rem;
+    color: #6c757d;
+    transition: transform 0.2s;
+}
+
+.collapsible-icon.expanded {
+    transform: rotate(180deg);
+}
+
+.collapsible-content {
+    padding: 1rem;
+    background-color: white;
+    display: none;
+}
+
+.collapsible-content.expanded {
+    display: block;
+}
+
+/* Deadline countdown styles */
+.deadline-countdown {
+    background: linear-gradient(135deg, #ff6b6b, #ffa500);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.countdown-display {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 1rem;
+    min-width: 80px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #dc3545;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* Critical deadline styling */
+.deadline-countdown.critical {
+    background: linear-gradient(135deg, #dc3545, #ff1744);
+    animation: criticalPulse 1s infinite;
+}
+
+@keyframes criticalPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(220, 53, 69, 0.6);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    }
+}
+
+.deadline-countdown.critical .countdown-number {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Global deadline section */
+.global-deadline-section {
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.deadline-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.deadline-controls .form-group {
+    margin-bottom: 0;
+}
+
+.deadline-controls .form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.25rem;
+}
+
+/* Print styles */
+@media print {
+    body {
+        font-size: 12pt;
+        color: black;
+        background: white;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .status-bar,
+    .phase-navigation,
+    .navigation-buttons {
+        display: none !important;
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: black !important;
+    }
+
+    .info-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid-page;
+    }
+
+    .data-table {
+        page-break-inside: avoid;
+    }
+
+    .decision-box {
+        border: 2px solid #000;
+        background: white !important;
+    }
+}
