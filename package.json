@@ -1,8 +1,9 @@
 {
     "name": "geo-tsunami-watch",
     "private": true,
-    "version": "1.0.0",
+    "version": "1.1.0",
     "type": "module",
+    "homepage": "https://geovidenskab.github.io/GEOseis-tsunami/",
     "scripts": {
         "dev": "vite --port 3002",
         "build": "vite build",
